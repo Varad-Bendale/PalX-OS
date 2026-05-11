@@ -37,7 +37,7 @@ dd gdt_start
 ; we have 2 different differetn segments data and code so this is the limit for the thing so now ofc this is very low so there is like 1111 hidden thing which 
 ; is added to the limit which makes the thing like 0xFFFFF which is insanely huge number like a million bit which is like 1 mb but still its too much low so we
 ; got the granuality which makes us use the 4kb inspite of 1 byte so our storage / limit increases significantly makes it to like 4gb which is awe
-ome amount of limit the real nesecessity for the limit is like the memory thing see if any of the code / data looks for the memory and picks something if it is anything it would just start giving up random 
+; ome amount of limit the real nesecessity for the limit is like the memory thing see if any of the code / data looks for the memory and picks something if it is anything it would just start giving up random 
 ; stupid ass garbage value so we need to like set up the limit for the thing which makes it better like see there are two segments data and code the process should reach in each others teretoy simply we need
 ; to look for the same thing 
 
