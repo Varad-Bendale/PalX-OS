@@ -8,7 +8,9 @@ SECTIONS {
 
 
 /* okay listen this thing is known as lnker the main thing of it is to store the address of the programme in the ram liek if you recall in the idt there was the thing where 
-we like kept the address of the thing the compiler had the job to assign it well compiler makes a .o file which is completly binary and now its the job of the linker to give it the address and the header looking at the all the code in there  why not in the idt itself well it is used in all the files all the boot all the kernel and all of those so yeah it is like so the address is like this well also 
+we like kept the address of the thing the compiler had the job to assign it well compiler makes a .o file which is completly binary and now its the job of the linker to give
+it the address and the header looking at the all the code in there  why not in the idt itself well it is used in all the files all the boot all the kernel and all of those 
+so yeah it is like so the address is like this well also 
 why not keep the address standerd cause each and everyu processor each and every ram are different the ram which are occupied ealrier are different dso making a seperate 
 file was kinda nessesary 
 about the .text :- CPU should EXECUTE this
@@ -27,7 +29,8 @@ why segregations is important think of like a hacker is there he changed some fi
 now why not just keep it in the compiler itself well you can each and every file which is present the compiler is very much self sufficient to store all these parts and 
 segreagate them on its own but one of the levrage which this linker got is it have all the files access right so in any case we changed some settings or changed some things 
 in the file the linker can automatically detect that okjay this was changed and these funtions are present in these all different different files and need to be changed as
- well now how does the linker get it it uses the tol known as make it is called whenever the thing is changed then we like get this funtion  things and then it figuers out what is changed and what needs to be changed so yeah its useful that way 
+ well now how does the linker get it it uses the tol known as make it is called whenever the thing is changed then we like get this funtion  things and then it figuers out 
+what is changed and what needs to be changed so yeah its useful that way 
 
 so see like the rules or the permissions were manually written down by our great tech people and even the as per permissions our cpu does its job as per it its all linked 
 up thats why linker haha  */
