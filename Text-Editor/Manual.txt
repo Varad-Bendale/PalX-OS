@@ -1,0 +1,9 @@
+Text editors see here first all the keyboards words are like we type something but need some or the other permission like pressing enter or something like that for like getting all the typed stuff to be stored in a variable  things but here we don’t need to do like that just like we hit some keyword it should come or stored in the variable quickly in so the very first work to do in here is to enable the raw thing for the keyboard 
+
+Okay so now in the code lets go one by one see in the raw mode there is this tcgetattr which is like it gets all the settings the current terminal is on so we store it for once so that after our work is done we can just edit it out as it was 
+Then we go to the echo stuff see in the terminal whenever you type something it gets displayed on the terminal we make it off so that it cannot be seen ( whats the need see its just like the keywords like up or down or something like that those are some random words it would show bullshit so therefore we hide it out ) and the ICANON is for the enter stuff it keeps on going in the variable till we not enter some hit point which we have decided 
+
+All of these are in the binary so like by doing | it adds up and we can easily negate it and the &= helps setting all those flags as per we need it to be 
+Now we also store this thing as well in the struct and then as we edit the settings we set the settings in the terminal as per the bit number we receive 
+Now in here there is this TCSAFLUSH this setting is like all the functions which are there it looks for it and until and unless all of them are not done it doesn’t execute the attr thing  STDIN is just the keyboard output 0 can also be written over there and there is this atexit it looks like when the programme is ending and as it ends it just directly executes the assigned function over there 
+Now here as soon as the function ends it just resets all the raw mode thing and the user can use the system normally as he was using it 
