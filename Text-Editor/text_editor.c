@@ -12,10 +12,17 @@ void disable_raw_mode(){
 void rawmode(){
     tcgetattr( STDIN_FILENO , &original) ;
     struct termios temp = original ; 
-    temp.c_lflag &= ~(ECHO|ICANON|ISIG ) ; 
+    temp.c_iflag &= ~(IXON | ICRNL ) ; 
+    temp.c_oflag &= ~(OPOST ) ; 
+    temp.c_lflag &= ~(IEXTEN|ECHO|ICANON|ISIG ) ; 
+    temp.c_cc[VMIN] = 0
+    temp.c_cc[VTIME] = 1
+    temp.c_oflag &= ~(OPOST ) ; 
+
     tcsetattr(STDIN_FILENO ,TCSAFLUSH ,  &temp) ; 
     atexit(disable_raw_mode ) ; 
 }
+
 int main(){
     rawmode() ; 
     char c  ; 

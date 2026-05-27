@@ -7,3 +7,23 @@ All of these are in the binary so like by doing | it adds up and we can easily n
 Now we also store this thing as well in the struct and then as we edit the settings we set the settings in the terminal as per the bit number we receive 
 Now in here there is this TCSAFLUSH this setting is like all the functions which are there it looks for it and until and unless all of them are not done it doesn’t execute the attr thing  STDIN is just the keyboard output 0 can also be written over there and there is this atexit it looks like when the programme is ending and as it ends it just directly executes the assigned function over there 
 Now here as soon as the function ends it just resets all the raw mode thing and the user can use the system normally as he was using it 
+Okay few stuff used in here now 
+
+Okay now here there are 2 types of flags in the struct 
+c_iflags :- this one is used to control the input the raw bits which are taken inside the terminal those needs to be changed or work on that one this represents that 
+c_lflag :- this one is used to control how the terminal should behave like earlier we did the echo means the terminal shouldn't type out the words like those commands 
+
+IXON :- to disable all the ctrl q and ctrl s in earlier days these were used for like start sending the data till ctrl q is not pressed majority used in the printer stuff this one I is that input and the Xon and Xoff means its on or off that stuff so yeah it disable the things 
+
+IEXTEN :- While executing the programme there are few points where the values are input or taken there is this feature of ctrl v and then type something and then ctrl c it sends those 3 bytes data or variable to the programme so its better this way but in text editor not needed so yeah same problem of ctrl o is also solved ion Mac 
+
+ICRNL :- this is the conflict deceived stuff see the enter button and the ctrl + m had the same job in the earlier days so while entering those in the terminal those gives out the same tokens so we like enter ctrl + m and ctrl + j all of them give out same terminal token so again we disable it so get the unique token for it . Only the ctrl + j we get need to get 10 because if you count we get 10 for it as per the alphabetically and ctrl + m we get 13 and also enter is 13 its hardcoded that way not the thing is its more easier to work on the number same as the alphabetical order and the ctrl + m and the enter have the same work so its not a issue over here 
+
+OPOST  :- the terminal was designed to like if it sees the \n it automatically takes the \n\r at the same point it moves to the left and down for the stuff now we dont need it in the text editor so we dont keep it and disable it on our own so now the \n and \r are different things from core not the joint the terminal assume was . O is Output and POST is post-processing of output 
+
+Time outs see here we have the option of the read like till the user dont press any key it just waits for the user to press the keys but its waste of computation and also we can do something in the mean time like animate or do something else we need to get the persmission from the read that okay user is not doing anything you can do it but as soon as the interrupt comes the alarm is triggered fast and the read needs to be on then 
+Now here there are we can see the flag of the c_cc means the it controls all the settings in the terminal 
+VMIN - this means how much bytes should come before all the read gets activated 
+VTIME - this means how much the time the we need to wait for the read to appear here 1 means 1/10 second 
+
+
